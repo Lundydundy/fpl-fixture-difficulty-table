@@ -1,0 +1,251 @@
+.gameweek-slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.gameweek-slider__label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.gameweek-slider__container {
+  position: relative;
+  width: 100%;
+}
+
+.gameweek-slider__sliders-control {
+  position: relative;
+  min-height: 50px;
+  margin: 20px 0;
+}
+
+.gameweek-slider__input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  background-color: #ddd;
+  pointer-events: none;
+  border-radius: 8px;
+  height: 8px;
+}
+
+.gameweek-slider__input::-webkit-slider-track {
+  -webkit-appearance: none;
+  height: 8px;
+}
+
+.gameweek-slider__input::-moz-range-track {
+  -moz-appearance: none;
+  height: 8px;
+}
+
+.gameweek-slider__input::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 0 none;
+  background: #04AA6D;
+  cursor: pointer;
+  -webkit-appearance: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.gameweek-slider__input::-moz-range-thumb {
+  pointer-events: all;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 0 none;
+  background: #04AA6D;
+  cursor: pointer;
+  -moz-appearance: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.gameweek-slider__form-control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.gameweek-slider__form-control-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: #f9f9f9;
+  width: 100%;
+}
+
+.gameweek-slider__form-control-container__time {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.gameweek-slider__value-display {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.gameweek-slider__range-values {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.gameweek-slider__range-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.gameweek-slider__count {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .gameweek-slider {
+    margin: 0.75rem 0;
+  }
+  
+  .gameweek-slider__label {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .gameweek-slider__sliders-control {
+    min-height: 60px; /* Larger touch area */
+    margin: 25px 0;
+  }
+  
+  .gameweek-slider__input {
+    height: 10px; /* Thicker track for easier touch */
+  }
+  
+  .gameweek-slider__input::-webkit-slider-thumb {
+    width: 28px; /* Larger thumb for touch */
+    height: 28px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  }
+  
+  .gameweek-slider__input::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  }
+  
+  .gameweek-slider__range-label {
+    font-size: 1rem;
+  }
+  
+  .gameweek-slider__form-control-container {
+    padding: 12px 16px; /* Larger touch area */
+  }
+  
+  .gameweek-slider__form-control-container__time {
+    font-size: 0.875rem;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+  .gameweek-slider__sliders-control {
+    min-height: 70px;
+    margin: 30px 0;
+  }
+  
+  .gameweek-slider__input::-webkit-slider-thumb {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .gameweek-slider__input::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .gameweek-slider__range-label {
+    font-size: 0.9375rem;
+  }
+  
+  .gameweek-slider__count {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .gameweek-slider__sliders-control {
+    min-height: 80px;
+    padding: 20px 0;
+  }
+  
+  .gameweek-slider__input {
+    height: 12px;
+  }
+  
+  .gameweek-slider__input::-webkit-slider-thumb {
+    width: 36px;
+    height: 36px;
+    cursor: grab;
+  }
+  
+  .gameweek-slider__input::-moz-range-thumb {
+    width: 36px;
+    height: 36px;
+    cursor: grab;
+  }
+  
+  .gameweek-slider__input:active::-webkit-slider-thumb {
+    cursor: grabbing;
+    transform: scale(1.1);
+  }
+  
+  .gameweek-slider__input:active::-moz-range-thumb {
+    cursor: grabbing;
+    transform: scale(1.1);
+  }
+  
+  .gameweek-slider__form-control-container {
+    min-height: 44px;
+    padding: 14px 18px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .gameweek-slider__sliders-control {
+    min-height: 50px;
+    margin: 15px 0;
+  }
+  
+  .gameweek-slider__input::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .gameweek-slider__input::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+  }
+}

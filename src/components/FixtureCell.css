@@ -1,0 +1,334 @@
+/* FixtureCell Component Styles */
+
+.fixture-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  min-height: 60px;
+  min-width: 80px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  cursor: default;
+}
+
+.fixture-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.opponent-name {
+  font-weight: 600;
+  line-height: 1.2;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.venue-indicator {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 2px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.venue-indicator.home {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: inherit;
+}
+
+.venue-indicator.away {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.difficulty-indicator {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Difficulty-based color coding with high contrast */
+
+/* Easy fixtures (1-2): Green */
+.fixture-cell.difficulty-easy {
+  background-color: var(--difficulty-easy-bg);
+  border-color: var(--difficulty-easy-border);
+  color: var(--difficulty-easy-text);
+}
+
+.fixture-cell.difficulty-easy:hover {
+  opacity: 0.9;
+}
+
+.fixture-cell.difficulty-easy .venue-indicator.home {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.fixture-cell.difficulty-easy .venue-indicator.away {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Medium fixtures (3): Yellow/Amber */
+.fixture-cell.difficulty-medium {
+  background-color: var(--difficulty-medium-bg);
+  border-color: var(--difficulty-medium-border);
+  color: var(--difficulty-medium-text);
+}
+
+.fixture-cell.difficulty-medium:hover {
+  opacity: 0.9;
+}
+
+.fixture-cell.difficulty-medium .venue-indicator.home {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.fixture-cell.difficulty-medium .venue-indicator.away {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Hard fixtures (4-5): Red */
+.fixture-cell.difficulty-hard {
+  background-color: var(--difficulty-hard-bg);
+  border-color: var(--difficulty-hard-border);
+  color: var(--difficulty-hard-text);
+}
+
+.fixture-cell.difficulty-hard:hover {
+  opacity: 0.9;
+}
+
+.fixture-cell.difficulty-hard .venue-indicator.home {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.fixture-cell.difficulty-hard .venue-indicator.away {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Home/Away specific styling */
+.fixture-cell.home-fixture {
+  border-left: 3px solid currentColor;
+}
+
+.fixture-cell.away-fixture {
+  border-right: 3px solid currentColor;
+}
+
+/* Focus and accessibility states */
+.fixture-cell:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .fixture-cell {
+    border-width: 2px;
+  }
+  
+  .fixture-cell.difficulty-easy {
+    background-color: #a3d977;
+    border-color: #28a745;
+    color: #000;
+  }
+  
+  .fixture-cell.difficulty-medium {
+    background-color: #ffd93d;
+    border-color: #ffc107;
+    color: #000;
+  }
+  
+  .fixture-cell.difficulty-hard {
+    background-color: #ff6b6b;
+    border-color: #dc3545;
+    color: #000;
+  }
+  
+  .difficulty-indicator {
+    background-color: #fff;
+    border-color: #000;
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fixture-cell {
+    transition: none;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .fixture-cell {
+    min-width: 58px;
+    min-height: 48px;
+    padding: 4px 2px;
+    font-size: 10px;
+    border-width: 2px; /* Thicker borders for better visibility */
+  }
+  
+  .fixture-content {
+    gap: 1px;
+  }
+  
+  .opponent-name {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  
+  .venue-indicator {
+    font-size: 8px;
+    padding: 0px 2px;
+    font-weight: 800;
+  }
+  
+  .difficulty-indicator {
+    width: 12px;
+    height: 12px;
+    font-size: 8px;
+    font-weight: 800;
+    top: 1px;
+    right: 1px;
+  }
+  
+  /* Enhanced color contrast for mobile */
+  .fixture-cell.difficulty-easy {
+    background-color: #c3e6cb;
+    border-color: #28a745;
+    color: #0d4b14;
+  }
+  
+  .fixture-cell.difficulty-medium {
+    background-color: #ffeaa7;
+    border-color: #ffc107;
+    color: #664d03;
+  }
+  
+  .fixture-cell.difficulty-hard {
+    background-color: #f5c6cb;
+    border-color: #dc3545;
+    color: #58151c;
+  }
+  
+  /* Stronger home/away indicators on mobile */
+  .fixture-cell.home-fixture {
+    border-left-width: 4px;
+  }
+  
+  .fixture-cell.away-fixture {
+    border-right-width: 4px;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+  .fixture-cell {
+    min-width: 48px;
+    min-height: 42px;
+    padding: 3px 1px;
+    font-size: 9px;
+  }
+  
+  .opponent-name {
+    font-size: 9px;
+    max-width: 44px;
+  }
+  
+  .venue-indicator {
+    font-size: 7px;
+    padding: 0px 1px;
+  }
+  
+  .difficulty-indicator {
+    width: 10px;
+    height: 10px;
+    font-size: 7px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .fixture-cell {
+    min-height: 44px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+  
+  .fixture-cell:active {
+    transform: scale(0.98);
+  }
+  
+  /* Larger touch targets on mobile */
+  @media (max-width: 768px) {
+    .fixture-cell {
+      min-width: 60px;
+      min-height: 50px;
+      padding: 6px 3px;
+    }
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .fixture-cell {
+    min-height: 40px;
+    padding: 3px 2px;
+  }
+  
+  .opponent-name {
+    font-size: 9px;
+  }
+  
+  .venue-indicator {
+    font-size: 7px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .fixture-cell {
+    border: 1px solid #000 !important;
+    background-color: transparent !important;
+  }
+  
+  .fixture-cell.difficulty-easy::after {
+    content: " (Easy)";
+  }
+  
+  .fixture-cell.difficulty-medium::after {
+    content: " (Medium)";
+  }
+  
+  .fixture-cell.difficulty-hard::after {
+    content: " (Hard)";
+  }
+}

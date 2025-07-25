@@ -1,0 +1,216 @@
+.api-status {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.api-status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.api-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.connected {
+  background-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.status-dot.disconnected {
+  background-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.status-text {
+  font-weight: 500;
+  color: #374151;
+}
+
+.api-status-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.status-button {
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.status-button:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.status-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.refresh-button {
+  font-size: 14px;
+}
+
+.api-status-details {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.status-info {
+  margin-bottom: 12px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.status-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.status-value {
+  color: #374151;
+  font-family: monospace;
+}
+
+.status-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.action-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #2563eb;
+}
+
+.action-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.test-button {
+  background-color: #059669;
+}
+
+.test-button:hover {
+  background-color: #047857;
+}
+
+.clear-button {
+  background-color: #dc2626;
+}
+
+.clear-button:hover {
+  background-color: #b91c1c;
+}
+
+.working-proxies {
+  margin-top: 12px;
+}
+
+.working-proxies h4 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #374151;
+}
+
+.working-proxies ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.proxy-item {
+  background-color: #ecfdf5;
+  border: 1px solid #d1fae5;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-bottom: 4px;
+  font-family: monospace;
+  font-size: 11px;
+  color: #065f46;
+}
+
+.connection-help {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #fef3c7;
+  border: 1px solid #fbbf24;
+  border-radius: 4px;
+}
+
+.connection-help h4 {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #92400e;
+}
+
+.connection-help p {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: #92400e;
+}
+
+.connection-help ul {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 12px;
+  color: #92400e;
+}
+
+.connection-help li {
+  margin-bottom: 4px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .api-status-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .status-actions {
+    flex-wrap: wrap;
+  }
+
+  .action-button {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}

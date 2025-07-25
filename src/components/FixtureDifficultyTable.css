@@ -1,0 +1,451 @@
+.fixture-difficulty-table {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Header */
+.fixture-difficulty-table__header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 2rem 1rem;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.fixture-difficulty-table__header h1 {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+.fixture-difficulty-table__header p {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Primary Controls - Gameweek Range */
+.fixture-difficulty-table__primary-controls {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg-accent);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.fixture-difficulty-table__gameweek-control {
+  display: flex;
+  justify-content: center;
+}
+
+.fixture-difficulty-table__gameweek-control > * {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+/* Secondary Controls - Filters */
+.fixture-difficulty-table__secondary-controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.fixture-difficulty-table__secondary-controls:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.fixture-difficulty-table__filter-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Legend Section - Less Prominent */
+.fixture-difficulty-table__legend-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Loading States */
+.fixture-difficulty-table__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.fixture-difficulty-table__spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fixture-difficulty-table__loading p {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.fixture-difficulty-table__updating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.fixture-difficulty-table__updating span {
+  color: #1e40af;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Error States */
+.fixture-difficulty-table__error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.fixture-difficulty-table__error-content {
+  text-align: center;
+  max-width: 400px;
+}
+
+.fixture-difficulty-table__error-content h3 {
+  color: #dc2626;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.fixture-difficulty-table__error-content p {
+  color: #374151;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.fixture-difficulty-table__retry-button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.fixture-difficulty-table__retry-button:hover {
+  background-color: #b91c1c;
+}
+
+.fixture-difficulty-table__retry-button:focus {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+.fixture-difficulty-table__error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.fixture-difficulty-table__error-banner span {
+  color: #dc2626;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.fixture-difficulty-table__retry-button--small {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.fixture-difficulty-table__retry-button--small:hover {
+  background-color: #b91c1c;
+}
+
+/* No Results */
+.fixture-difficulty-table__no-results {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.fixture-difficulty-table__no-results p {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.fixture-difficulty-table__clear-search {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.fixture-difficulty-table__clear-search:hover {
+  background-color: #2563eb;
+}
+
+/* Content */
+.fixture-difficulty-table__content {
+  position: relative;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fixture-difficulty-table__content--updating {
+  opacity: 0.7;
+  transform: translateY(2px);
+}
+
+.fixture-difficulty-table__content--loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.fixture-difficulty-table__stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+
+/* Desktop (Large screens) */
+@media (min-width: 1200px) {
+  .fixture-difficulty-table {
+    max-width: 1400px;
+  }
+  
+  .fixture-difficulty-table__primary-controls {
+    padding: 2rem;
+  }
+  
+  .fixture-difficulty-table__secondary-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+/* Tablet (Medium screens) */
+@media (max-width: 1024px) {
+  .fixture-difficulty-table {
+    padding: 0.75rem;
+  }
+  
+  .fixture-difficulty-table__header h1 {
+    font-size: 2rem;
+  }
+  
+  .fixture-difficulty-table__primary-controls {
+    padding: 1.25rem;
+  }
+  
+  .fixture-difficulty-table__secondary-controls {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+}
+
+/* Mobile (Small screens) */
+@media (max-width: 768px) {
+  .fixture-difficulty-table {
+    padding: 0.5rem;
+    margin: 0;
+  }
+  
+  .fixture-difficulty-table__header {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .fixture-difficulty-table__header h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  .fixture-difficulty-table__header p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .fixture-difficulty-table__primary-controls {
+    padding: 1rem;
+    margin: 0 0.25rem 1rem;
+  }
+  
+  .fixture-difficulty-table__secondary-controls {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 0.25rem 1rem;
+  }
+  
+  .fixture-difficulty-table__legend-section {
+    margin: 0 0.25rem 1.5rem;
+  }
+  
+  .fixture-difficulty-table__stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    font-size: 0.8125rem;
+  }
+  
+  .fixture-difficulty-table__error-banner {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    margin: 0.75rem 0;
+  }
+  
+  .fixture-difficulty-table__content {
+    margin: 0 -0.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Mobile (Extra small screens) */
+@media (max-width: 480px) {
+  .fixture-difficulty-table {
+    padding: 0.25rem;
+  }
+  
+  .fixture-difficulty-table__header {
+    padding: 0 0.25rem;
+  }
+  
+  .fixture-difficulty-table__header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .fixture-difficulty-table__header p {
+    font-size: 0.9375rem;
+  }
+  
+  .fixture-difficulty-table__controls {
+    padding: 0.5rem;
+    margin: 0 0 1rem;
+    gap: 0.75rem;
+  }
+  
+  .fixture-difficulty-table__loading,
+  .fixture-difficulty-table__error,
+  .fixture-difficulty-table__no-results {
+    padding: 2rem 1rem;
+  }
+  
+  .fixture-difficulty-table__spinner {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .fixture-difficulty-table__stats {
+    font-size: 0.75rem;
+    padding: 0.5rem 0;
+  }
+  
+  .fixture-difficulty-table__content {
+    margin: 0 -0.25rem;
+    padding: 0 0.25rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .fixture-difficulty-table__retry-button,
+  .fixture-difficulty-table__retry-button--small,
+  .fixture-difficulty-table__clear-search {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .fixture-difficulty-table__retry-button--small {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .fixture-difficulty-table__header {
+    margin-bottom: 1rem;
+  }
+  
+  .fixture-difficulty-table__header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .fixture-difficulty-table__controls {
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+}

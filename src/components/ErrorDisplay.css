@@ -1,0 +1,304 @@
+.error-display {
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.error-display__content {
+  padding: 1rem;
+}
+
+/* Variant styles */
+.error-display--card {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  margin: 1rem 0;
+}
+
+.error-display--banner {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-left: 4px solid #dc2626;
+  margin: 0.5rem 0;
+}
+
+.error-display--inline {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 4px;
+  margin: 0.25rem 0;
+}
+
+.error-display--inline .error-display__content {
+  padding: 0.75rem;
+}
+
+/* Header */
+.error-display__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.error-display__icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.error-display__title {
+  color: #dc2626;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.error-display__dismiss-button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.error-display__dismiss-button:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.error-display__dismiss-button:focus {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* Message */
+.error-display__message {
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+/* Details */
+.error-display__details {
+  margin: 0.75rem 0;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #f9fafb;
+}
+
+.error-display__details summary {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.error-display__details summary:hover {
+  background-color: #f3f4f6;
+}
+
+.error-display__technical {
+  padding: 0.75rem;
+  margin: 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  background-color: #ffffff;
+  border: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Actions */
+.error-display__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.error-display__retry-button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-height: 44px;
+}
+
+.error-display__retry-button:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.error-display__retry-button:focus {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+.error-display__retry-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.error-display__max-retries {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Error type specific styles */
+.error-display--network {
+  border-left-color: #f59e0b;
+}
+
+.error-display--network .error-display__title {
+  color: #d97706;
+}
+
+.error-display--timeout {
+  border-left-color: #f59e0b;
+}
+
+.error-display--timeout .error-display__title {
+  color: #d97706;
+}
+
+.error-display--parsing {
+  border-left-color: #f59e0b;
+}
+
+.error-display--parsing .error-display__title {
+  color: #d97706;
+}
+
+.error-display--server {
+  border-left-color: #dc2626;
+}
+
+.error-display--server .error-display__title {
+  color: #dc2626;
+}
+
+.error-display--not_found {
+  border-left-color: #6b7280;
+}
+
+.error-display--not_found .error-display__title {
+  color: #374151;
+}
+
+/* Banner variant adjustments */
+.error-display--banner .error-display__header {
+  margin-bottom: 0.5rem;
+}
+
+.error-display--banner .error-display__message {
+  margin-bottom: 0.75rem;
+}
+
+.error-display--banner .error-display__actions {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Inline variant adjustments */
+.error-display--inline .error-display__header {
+  margin-bottom: 0.5rem;
+}
+
+.error-display--inline .error-display__title {
+  font-size: 1rem;
+}
+
+.error-display--inline .error-display__message {
+  font-size: 0.8125rem;
+  margin-bottom: 0.75rem;
+}
+
+.error-display--inline .error-display__actions {
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.error-display--inline .error-display__retry-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  min-height: 36px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .error-display__content {
+    padding: 0.75rem;
+  }
+  
+  .error-display__header {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .error-display__title {
+    font-size: 1rem;
+  }
+  
+  .error-display__message {
+    font-size: 0.8125rem;
+  }
+  
+  .error-display__actions {
+    gap: 0.5rem;
+  }
+  
+  .error-display__retry-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+    width: 100%;
+  }
+  
+  .error-display--banner .error-display__actions,
+  .error-display--inline .error-display__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .error-display {
+    border-width: 2px;
+  }
+  
+  .error-display__title {
+    font-weight: 700;
+  }
+  
+  .error-display__retry-button {
+    border: 2px solid transparent;
+  }
+  
+  .error-display__retry-button:focus {
+    border-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .error-display__retry-button,
+  .error-display__dismiss-button {
+    transition: none;
+  }
+}

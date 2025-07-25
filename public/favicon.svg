@@ -1,0 +1,22 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#38a169" stroke="#2d7d32" stroke-width="2"/>
+  
+  <!-- Football/Soccer ball pattern -->
+  <circle cx="16" cy="16" r="10" fill="#ffffff" stroke="#2d7d32" stroke-width="1"/>
+  
+  <!-- Pentagon in center -->
+  <polygon points="16,8 19.5,11 18,15 14,15 12.5,11" fill="#2d7d32"/>
+  
+  <!-- Hexagon segments around pentagon -->
+  <polygon points="16,8 19.5,11 22,8 20,5 12,5 10,8 12.5,11" fill="none" stroke="#2d7d32" stroke-width="0.8"/>
+  <polygon points="19.5,11 18,15 22,17 25,13 22,8" fill="none" stroke="#2d7d32" stroke-width="0.8"/>
+  <polygon points="18,15 14,15 12,19 16,22 20,19" fill="none" stroke="#2d7d32" stroke-width="0.8"/>
+  <polygon points="14,15 12.5,11 10,8 7,13 10,17 12,19" fill="none" stroke="#2d7d32" stroke-width="0.8"/>
+  
+  <!-- Difficulty indicator dots -->
+  <circle cx="8" cy="8" r="1.5" fill="#d4edda"/>
+  <circle cx="24" cy="8" r="1.5" fill="#fff3cd"/>
+  <circle cx="26" cy="24" r="1.5" fill="#f8d7da"/>
+  <circle cx="6" cy="24" r="1.5" fill="#d4edda"/>
+</svg>

@@ -1,0 +1,385 @@
+/* DifficultyLegend Component Styles */
+
+.difficulty-legend-container {
+  margin: 16px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.legend-toggle-button {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-tertiary);
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.legend-toggle-button:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.legend-toggle-button:focus {
+  outline: 2px solid var(--border-focus);
+  outline-offset: -2px;
+}
+
+.toggle-icon {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  transition: transform 0.2s ease;
+}
+
+.toggle-text {
+  flex: 1;
+  text-align: left;
+}
+
+.legend-content {
+  padding: 16px;
+  background-color: var(--bg-primary);
+}
+
+.legend-header {
+  margin-bottom: 16px;
+}
+
+.legend-title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.legend-description {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.legend-color-sample {
+  width: 40px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+}
+
+/* Apply the same color coding as FixtureCell */
+.legend-color-sample.difficulty-easy {
+  background-color: var(--difficulty-easy-bg);
+  border-color: var(--difficulty-easy-border);
+  color: var(--difficulty-easy-text);
+}
+
+.legend-color-sample.difficulty-medium {
+  background-color: var(--difficulty-medium-bg);
+  border-color: var(--difficulty-medium-border);
+  color: var(--difficulty-medium-text);
+}
+
+.legend-color-sample.difficulty-hard {
+  background-color: var(--difficulty-hard-bg);
+  border-color: var(--difficulty-hard-border);
+  color: var(--difficulty-hard-text);
+}
+
+.legend-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.legend-item-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.legend-item-description {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.3;
+}
+
+.legend-footer {
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.legend-note {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .difficulty-legend-container {
+    border-color: #000;
+    border-width: 2px;
+  }
+  
+  .legend-toggle-button {
+    border-color: #000;
+    border-width: 2px;
+  }
+  
+  .legend-color-sample.difficulty-easy {
+    background-color: #a3d977;
+    border-color: #28a745;
+    color: #000;
+  }
+  
+  .legend-color-sample.difficulty-medium {
+    background-color: #ffd93d;
+    border-color: #ffc107;
+    color: #000;
+  }
+  
+  .legend-color-sample.difficulty-hard {
+    background-color: #ff6b6b;
+    border-color: #dc3545;
+    color: #000;
+  }
+  
+  .legend-item {
+    border-color: #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .legend-toggle-button,
+  .toggle-icon {
+    transition: none;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .difficulty-legend-container {
+    margin: 12px 0;
+    border-radius: 0.5rem;
+  }
+  
+  .legend-toggle-button {
+    padding: 12px 14px;
+    font-size: 14px;
+    min-height: 44px; /* Touch-friendly height */
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  
+  .legend-content {
+    padding: 14px;
+  }
+  
+  .legend-title {
+    font-size: 15px;
+  }
+  
+  .legend-description {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  .legend-items {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .legend-item {
+    padding: 8px;
+    gap: 12px;
+    border-radius: 0.375rem;
+  }
+  
+  .legend-color-sample {
+    width: 40px;
+    height: 32px;
+    font-size: 11px;
+    border-width: 2px; /* Thicker border for better visibility */
+  }
+  
+  .legend-item-label {
+    font-size: 13px;
+    font-weight: 700;
+  }
+  
+  .legend-item-description {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+  .difficulty-legend-container {
+    margin: 10px 0;
+  }
+  
+  .legend-toggle-button {
+    padding: 14px 16px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+  
+  .legend-content {
+    padding: 12px;
+  }
+  
+  .legend-items {
+    gap: 6px;
+  }
+  
+  .legend-item {
+    padding: 6px 8px;
+    gap: 10px;
+  }
+  
+  .legend-color-sample {
+    width: 36px;
+    height: 28px;
+    font-size: 10px;
+  }
+  
+  .legend-item-content {
+    gap: 1px;
+  }
+  
+  .legend-item-label {
+    font-size: 12px;
+  }
+  
+  .legend-item-description {
+    font-size: 11px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .legend-toggle-button {
+    min-height: 48px;
+    padding: 14px 16px;
+    font-size: 15px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .legend-toggle-button:active {
+    transform: scale(0.98);
+    background-color: #e0e0e0;
+  }
+  
+  .toggle-icon {
+    font-size: 14px;
+    transition: transform 0.2s ease;
+  }
+  
+  .legend-item {
+    min-height: 44px;
+    align-items: center;
+  }
+  
+  .legend-color-sample {
+    flex-shrink: 0;
+    border-width: 2px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .legend-toggle-button {
+    min-height: 40px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .legend-content {
+    padding: 10px;
+  }
+  
+  .legend-items {
+    gap: 4px;
+  }
+  
+  .legend-item {
+    padding: 4px 6px;
+    min-height: 36px;
+  }
+  
+  .legend-color-sample {
+    width: 32px;
+    height: 24px;
+    font-size: 9px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .difficulty-legend-container {
+    border: 1px solid #000 !important;
+    background-color: transparent !important;
+  }
+  
+  .legend-toggle-button {
+    display: none;
+  }
+  
+  .legend-content {
+    display: block !important;
+    background-color: transparent !important;
+  }
+  
+  .legend-color-sample {
+    border: 1px solid #000 !important;
+    background-color: transparent !important;
+  }
+  
+  .legend-color-sample.difficulty-easy::after {
+    content: " (Easy)";
+  }
+  
+  .legend-color-sample.difficulty-medium::after {
+    content: " (Medium)";
+  }
+  
+  .legend-color-sample.difficulty-hard::after {
+    content: " (Hard)";
+  }
+}
