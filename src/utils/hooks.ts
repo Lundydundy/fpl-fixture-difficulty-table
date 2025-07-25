@@ -29,7 +29,7 @@ export function useDebouncedCallback<T extends (...args: any[]) => any>(
   delay: number
 ): T {
   const callbackRef = useRef(callback);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<number>();
 
   // Update callback ref when callback changes
   useEffect(() => {
@@ -53,7 +53,7 @@ export function useDebouncedCallback<T extends (...args: any[]) => any>(
       
       timeoutRef.current = setTimeout(() => {
         callbackRef.current(...args);
-      }, delay);
+      }, delay) as unknown as number;
     }) as T,
     [delay]
   );

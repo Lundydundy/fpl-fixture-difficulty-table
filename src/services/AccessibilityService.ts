@@ -10,7 +10,7 @@ export interface AccessibilityOptions {
 
 class AccessibilityService {
   private liveRegion: HTMLElement | null = null;
-  private announceTimeout: NodeJS.Timeout | null = null;
+  private announceTimeout: number | null = null;
 
   /**
    * Initialize the accessibility service
@@ -63,7 +63,7 @@ class AccessibilityService {
       if (this.liveRegion) {
         this.liveRegion.textContent = message;
       }
-    }, delay);
+    }, delay) as unknown as number;
   }
 
   /**
