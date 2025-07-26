@@ -24,6 +24,7 @@ import ErrorDisplay from './ErrorDisplay';
 import TeamSelector from './TeamSelector';
 import FixtureRunAnalyzer from './FixtureRunAnalyzer';
 import ServiceModeSelector from './ServiceModeSelector';
+import TeamNameToggle from './TeamNameToggle';
 
 import './FixtureDifficultyTable.css';
 
@@ -203,6 +204,11 @@ const FixtureDifficultyTable: React.FC<FixtureDifficultyTableProps> = ({
     accessibilityService.announceSortChange(sortBy, newDirection);
   }, [dispatch, state.sortBy, state.sortDirection]);
 
+  // Handle team name display change
+  const handleTeamNameDisplayChange = useCallback((teamNameDisplay: typeof state.teamNameDisplay) => {
+    dispatch({ type: 'SET_TEAM_NAME_DISPLAY', payload: teamNameDisplay });
+  }, [dispatch]);
+
   // Handle retry after error
   const handleRetry = useCallback(() => {
     loadData();
@@ -306,6 +312,13 @@ const FixtureDifficultyTable: React.FC<FixtureDifficultyTableProps> = ({
               placeholder="Search teams..."
             />
           </div>
+
+          <div className="fixture-difficulty-table__filter-group">
+            <TeamNameToggle
+              value={state.teamNameDisplay}
+              onChange={handleTeamNameDisplayChange}
+            />
+          </div>
         </div>
 
         {/* Legend - Less Prominent */}
@@ -371,6 +384,7 @@ const FixtureDifficultyTable: React.FC<FixtureDifficultyTableProps> = ({
                     teams={sortedTeams}
                     gameweekRange={state.gameweekRange}
                     gameweeks={state.gameweeks}
+                    teamNameDisplay={state.teamNameDisplay}
                     sortBy={state.sortBy}
                     onSortChange={handleSortChange}
                   />

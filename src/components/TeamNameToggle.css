@@ -1,0 +1,120 @@
+/* Team Name Toggle Component Styles */
+
+.team-name-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.team-name-toggle__label {
+  color: #495057;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.team-name-toggle__button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.team-name-toggle__button:hover {
+  border-color: #3b82f6;
+  background: #f8fafc;
+}
+
+.team-name-toggle__button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.toggle-option {
+  color: #6b7280;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.toggle-option.active {
+  color: #3b82f6;
+  font-weight: 600;
+  background: #eff6ff;
+}
+
+.toggle-separator {
+  color: #dee2e6;
+  font-weight: 300;
+  margin: 0 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-name-toggle {
+    font-size: 13px;
+  }
+
+  .team-name-toggle__label {
+    font-size: 12px;
+  }
+
+  .team-name-toggle__button {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .toggle-option {
+    padding: 1px 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-name-toggle__label {
+    display: none; /* Hide label on very small screens */
+  }
+
+  .team-name-toggle__button {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .team-name-toggle__button {
+    background: #374151;
+    border-color: #4b5563;
+  }
+
+  .team-name-toggle__button:hover {
+    background: #4b5563;
+    border-color: #60a5fa;
+  }
+
+  .team-name-toggle__label {
+    color: #f9fafb;
+  }
+
+  .toggle-option {
+    color: #d1d5db;
+  }
+
+  .toggle-option.active {
+    color: #93c5fd;
+    background: #1e3a8a;
+  }
+
+  .toggle-separator {
+    color: #6b7280;
+  }
+}

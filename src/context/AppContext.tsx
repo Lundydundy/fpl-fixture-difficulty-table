@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
-import { AppState, SortOption, Team, Fixture, Gameweek, TeamFixture, GameweekRange } from '../types';
+import { AppState, SortOption, Team, Fixture, Gameweek, TeamFixture, GameweekRange, TeamNameDisplay } from '../types';
 
 // Action Types
 export type AppAction =
@@ -15,7 +15,16 @@ export type AppAction =
   | { type: 'SET_SELECTED_TEAM_IDS'; payload: number[] }
   | { type: 'SET_SORT_BY'; payload: SortOption }
   | { type: 'SET_SORT_DIRECTION'; payload: 'asc' | 'desc' }
+  | { type: 'SET_TEAM_NAME_DISPLAY'; payload: TeamNameDisplay }
   | { type: 'RESET_STATE' };
+
+// Helper function to get initial team name display based on screen size
+const getInitialTeamNameDisplay = (): TeamNameDisplay => {
+  if (typeof window !== 'undefined') {
+    return window.innerWidth < 768 ? 'short' : 'full';
+  }
+  return 'full';
+};
 
 // Initial State
 const initialState: AppState = {
@@ -29,6 +38,7 @@ const initialState: AppState = {
   selectedTeamIds: [],
   sortBy: 'team',
   sortDirection: 'asc',
+  teamNameDisplay: getInitialTeamNameDisplay(),
   loading: false,
   error: null,
 };
@@ -111,6 +121,12 @@ function appReducer(state: AppState, action: AppAction): AppState {
       return {
         ...state,
         sortDirection: action.payload,
+      };
+
+    case 'SET_TEAM_NAME_DISPLAY':
+      return {
+        ...state,
+        teamNameDisplay: action.payload,
       };
 
     case 'RESET_STATE':

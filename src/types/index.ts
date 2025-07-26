@@ -59,6 +59,8 @@ export interface GameweekRange {
 // State Management Types
 export type SortOption = 'team' | 'difficulty' | 'alphabetical';
 
+export type TeamNameDisplay = 'full' | 'short';
+
 export interface AppState {
   teams: Team[];
   fixtures: Fixture[];
@@ -70,6 +72,7 @@ export interface AppState {
   selectedTeamIds: number[];
   sortBy: SortOption;
   sortDirection: 'asc' | 'desc';
+  teamNameDisplay: TeamNameDisplay;
   loading: boolean;
   error: string | null;
 }

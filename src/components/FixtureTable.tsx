@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback } from 'react';
-import { TeamFixture, SortOption, Gameweek } from '../types';
+import { TeamFixture, SortOption, Gameweek, TeamNameDisplay } from '../types';
 import { FixtureCell } from './FixtureCell';
 import './FixtureTable.css';
 
@@ -9,6 +9,7 @@ export interface FixtureTableProps {
   teams: TeamFixture[];
   gameweekRange: GameweekRange;
   gameweeks: Gameweek[];
+  teamNameDisplay: TeamNameDisplay;
   sortBy: SortOption;
   onSortChange: (sort: SortOption) => void;
 }
@@ -22,6 +23,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   teams,
   gameweekRange,
   gameweeks,
+  teamNameDisplay,
   sortBy,
   onSortChange
 }) => {
@@ -67,6 +69,13 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
     const gameweek = gameweeks.find(gw => gw.id === gameweekNumber);
     return gameweek ? formatGameweekDate(gameweek.deadline_time) : '';
   }, [gameweeks, formatGameweekDate]);
+
+  /**
+   * Get team name based on display preference
+   */
+  const getTeamName = useCallback((team: TeamFixture['team']): string => {
+    return teamNameDisplay === 'short' ? team.short_name : team.name;
+  }, [teamNameDisplay]);
 
   /**
    * Generate gameweek column headers - memoized to prevent recalculation
@@ -131,7 +140,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
   return (
     <div className="fixture-table-container">
-      <table className="fixture-table" role="table" aria-label="Fixture difficulty table">
+      <table className={`fixture-table team-names-${teamNameDisplay}`} role="table" aria-label="Fixture difficulty table">
         <thead>
           <tr>
             <th 
@@ -175,8 +184,11 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
           {teams.map((teamFixture) => (
             <tr key={teamFixture.team.id} className="team-row">
               <td className="team-name-cell" scope="row">
-                <div className="team-name" title={teamFixture.team.name}>
-                  {teamFixture.team.name}
+                <div 
+                  className="team-name" 
+                  title={`${teamFixture.team.name} (${teamFixture.team.short_name})`}
+                >
+                  {getTeamName(teamFixture.team)}
                 </div>
               </td>
               <td className="difficulty-score-cell">

@@ -71,6 +71,16 @@
   left: 0;
   background-color: #f8f9fa;
   z-index: 2;
+  transition: min-width 0.3s ease;
+}
+
+/* Team header display modes */
+.fixture-table.team-names-short .team-header {
+  min-width: 80px;
+}
+
+.fixture-table.team-names-full .team-header {
+  min-width: 150px;
 }
 
 .team-header.active {
@@ -151,6 +161,16 @@
   z-index: 1;
   min-width: 150px;
   font-weight: 500;
+  transition: min-width 0.3s ease;
+}
+
+/* Team name display modes */
+.fixture-table.team-names-short .team-name-cell {
+  min-width: 80px;
+}
+
+.fixture-table.team-names-full .team-name-cell {
+  min-width: 150px;
 }
 
 .team-row:hover .team-name-cell {
@@ -224,8 +244,12 @@
     padding: 12px;
   }
   
-  .team-header {
+  .fixture-table.team-names-full .team-header {
     min-width: 180px;
+  }
+
+  .fixture-table.team-names-short .team-header {
+    min-width: 100px;
   }
   
   .difficulty-header {
@@ -248,8 +272,12 @@
     padding: 8px 6px;
   }
   
-  .team-header {
+  .fixture-table.team-names-full .team-header {
     min-width: 140px;
+  }
+
+  .fixture-table.team-names-short .team-header {
+    min-width: 90px;
   }
   
   .difficulty-header {
@@ -302,8 +330,12 @@
     background: #a0aec0;
   }
   
-  .fixture-table {
+  .fixture-table.team-names-full {
     min-width: 600px; /* Ensure horizontal scrolling */
+  }
+
+  .fixture-table.team-names-short {
+    min-width: 550px; /* Smaller width for abbreviations */
   }
   
   .fixture-table th,
@@ -312,20 +344,34 @@
     white-space: nowrap;
   }
   
-  .team-header {
+  .fixture-table.team-names-full .team-header {
     min-width: 120px;
+  }
+
+  .fixture-table.team-names-short .team-header {
+    min-width: 80px;
+  }
+
+  .team-header {
     position: sticky;
     left: 0;
     z-index: 3;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
   }
   
+  .fixture-table.team-names-full .team-name-cell {
+    min-width: 120px;
+  }
+
+  .fixture-table.team-names-short .team-name-cell {
+    min-width: 80px;
+  }
+
   .team-name-cell {
     position: sticky;
     left: 0;
     z-index: 2;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
-    min-width: 120px;
   }
   
   .difficulty-header {
@@ -377,8 +423,12 @@
     padding: 0 0.25rem;
   }
   
-  .fixture-table {
+  .fixture-table.team-names-full {
     min-width: 550px;
+  }
+
+  .fixture-table.team-names-short {
+    min-width: 500px;
   }
   
   .fixture-table th,
@@ -386,17 +436,32 @@
     padding: 4px 2px;
   }
   
-  .team-header {
+  .fixture-table.team-names-full .team-header {
     min-width: 100px;
   }
+
+  .fixture-table.team-names-short .team-header {
+    min-width: 70px;
+  }
   
-  .team-name-cell {
+  .fixture-table.team-names-full .team-name-cell {
     min-width: 100px;
+  }
+
+  .fixture-table.team-names-short .team-name-cell {
+    min-width: 70px;
   }
   
   .team-name {
     font-size: 11px;
+  }
+
+  .fixture-table.team-names-full .team-name {
     max-width: 90px;
+  }
+
+  .fixture-table.team-names-short .team-name {
+    max-width: 60px;
   }
   
   .difficulty-header {
