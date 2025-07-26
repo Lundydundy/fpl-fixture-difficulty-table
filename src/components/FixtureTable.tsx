@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback } from 'react';
-import { TeamFixture, SortOption } from '../types';
+import { TeamFixture, SortOption, Gameweek } from '../types';
 import { FixtureCell } from './FixtureCell';
 import './FixtureTable.css';
 
@@ -8,6 +8,7 @@ import { GameweekRange } from '../types';
 export interface FixtureTableProps {
   teams: TeamFixture[];
   gameweekRange: GameweekRange;
+  gameweeks: Gameweek[];
   sortBy: SortOption;
   onSortChange: (sort: SortOption) => void;
 }
@@ -20,6 +21,7 @@ export interface FixtureTableProps {
 export const FixtureTable: React.FC<FixtureTableProps> = ({
   teams,
   gameweekRange,
+  gameweeks,
   sortBy,
   onSortChange
 }) => {
@@ -39,19 +41,53 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   }, [sortBy]);
 
   /**
+   * Format gameweek deadline date to "Aug 15" format
+   */
+  const formatGameweekDate = useCallback((deadline_time: string): string => {
+    try {
+      const date = new Date(deadline_time);
+      // Check if date is valid
+      if (isNaN(date.getTime())) {
+        return '';
+      }
+      const options: Intl.DateTimeFormatOptions = { 
+        month: 'short', 
+        day: 'numeric' 
+      };
+      return date.toLocaleDateString('en-US', options);
+    } catch (error) {
+      return '';
+    }
+  }, []);
+
+  /**
+   * Get gameweek date by gameweek number
+   */
+  const getGameweekDate = useCallback((gameweekNumber: number): string => {
+    const gameweek = gameweeks.find(gw => gw.id === gameweekNumber);
+    return gameweek ? formatGameweekDate(gameweek.deadline_time) : '';
+  }, [gameweeks, formatGameweekDate]);
+
+  /**
    * Generate gameweek column headers - memoized to prevent recalculation
    */
   const gameweekHeaders = useMemo(() => {
     const headers = [];
     for (let i = gameweekRange.start; i <= gameweekRange.end; i++) {
+      const gameweekDate = getGameweekDate(i);
       headers.push(
         <th key={`gw-${i}`} className="gameweek-header" scope="col">
-          GW{i}
+          <div className="gameweek-header-content">
+            <div className="gameweek-number">GW{i}</div>
+            {gameweekDate && (
+              <div className="gameweek-date">{gameweekDate}</div>
+            )}
+          </div>
         </th>
       );
     }
     return headers;
-  }, [gameweekRange]);
+  }, [gameweekRange, getGameweekDate]);
 
   /**
    * Render fixture cells for a team's gameweeks

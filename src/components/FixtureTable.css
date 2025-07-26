@@ -88,6 +88,26 @@
   font-size: 12px;
 }
 
+.gameweek-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.gameweek-number {
+  font-weight: 600;
+  font-size: 13px;
+  color: #495057;
+}
+
+.gameweek-date {
+  font-weight: 400;
+  font-size: 11px;
+  color: #6c757d;
+  line-height: 1;
+}
+
 /* Table Body */
 .fixture-table tbody tr {
   border-bottom: 1px solid #dee2e6;
@@ -240,6 +260,14 @@
     min-width: 70px;
     font-size: 12px;
   }
+
+  .gameweek-number {
+    font-size: 12px;
+  }
+
+  .gameweek-date {
+    font-size: 10px;
+  }
 }
 
 /* Mobile optimizations with horizontal scrolling */
@@ -309,6 +337,14 @@
     min-width: 60px;
     font-size: 11px;
     padding: 6px 2px;
+  }
+
+  .gameweek-number {
+    font-size: 11px;
+  }
+
+  .gameweek-date {
+    font-size: 9px;
   }
   
   .team-name {
@@ -382,6 +418,21 @@
     min-width: 50px;
     font-size: 10px;
     padding: 4px 1px;
+  }
+
+  .gameweek-number {
+    font-size: 10px;
+  }
+
+  .gameweek-date {
+    font-size: 8px;
+  }
+
+  /* Hide dates on very small screens to save space */
+  @media (max-width: 400px) {
+    .gameweek-date {
+      display: none;
+    }
   }
   
   .fixture-cell-container {

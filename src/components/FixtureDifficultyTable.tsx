@@ -370,6 +370,7 @@ const FixtureDifficultyTable: React.FC<FixtureDifficultyTableProps> = ({
                   <FixtureTable
                     teams={sortedTeams}
                     gameweekRange={state.gameweekRange}
+                    gameweeks={state.gameweeks}
                     sortBy={state.sortBy}
                     onSortChange={handleSortChange}
                   />
