@@ -1,0 +1,215 @@
+/* Service Mode Selector Styles */
+.service-mode-selector {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.service-mode-selector__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.service-mode-selector__header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.custom-rules-badge {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #f59e0b;
+}
+
+.service-mode-selector__options {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.mode-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.mode-option:hover:not(.disabled) {
+    border-color: #3b82f6;
+    background: #f8fafc;
+    transform: translateY(-1px);
+}
+
+.mode-option.active {
+    border-color: #3b82f6;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 500;
+}
+
+.mode-option.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f9fafb;
+    color: #6b7280;
+}
+
+.mode-icon {
+    font-size: 1rem;
+}
+
+.mode-label {
+    flex: 1;
+    text-align: center;
+}
+
+.active-indicator {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.service-mode-selector__description {
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.service-mode-selector__description p {
+    margin: 0 0 8px 0;
+}
+
+.custom-rules-info {
+    margin-top: 8px;
+    padding: 8px;
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 4px;
+}
+
+.custom-rules-info strong {
+    color: #0c4a6e;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.custom-rules-info ul {
+    margin: 0;
+    padding-left: 16px;
+    color: #0c4a6e;
+}
+
+.custom-rules-info li {
+    margin: 2px 0;
+    font-size: 0.8125rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .service-mode-selector {
+        padding: 12px;
+        margin: 12px 0;
+    }
+
+    .service-mode-selector__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .service-mode-selector__options {
+        flex-direction: column;
+    }
+
+    .mode-option {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .custom-rules-badge {
+        align-self: flex-start;
+    }
+
+    .service-mode-selector__description {
+        font-size: 0.8125rem;
+    }
+
+    .custom-rules-info {
+        padding: 6px;
+    }
+
+    .custom-rules-info li {
+        font-size: 0.75rem;
+    }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+    .service-mode-selector {
+        background: #1f2937;
+        border-color: #374151;
+        color: #f9fafb;
+    }
+
+    .service-mode-selector__header h3 {
+        color: #f9fafb;
+    }
+
+    .mode-option {
+        background: #374151;
+        border-color: #4b5563;
+        color: #f9fafb;
+    }
+
+    .mode-option:hover:not(.disabled) {
+        background: #4b5563;
+        border-color: #60a5fa;
+    }
+
+    .mode-option.active {
+        background: #1e3a8a;
+        border-color: #60a5fa;
+        color: #93c5fd;
+    }
+
+    .mode-option.disabled {
+        background: #374151;
+        color: #9ca3af;
+    }
+
+    .service-mode-selector__description {
+        border-color: #4b5563;
+        color: #d1d5db;
+    }
+
+    .custom-rules-info {
+        background: #1e3a8a;
+        border-color: #3b82f6;
+    }
+
+    .custom-rules-info strong,
+    .custom-rules-info ul {
+        color: #93c5fd;
+    }
+}

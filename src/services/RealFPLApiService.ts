@@ -253,6 +253,19 @@ class RealFPLApiService {
   clearCache(): void {
     this.cache.clear();
   }
+
+  /**
+   * Get cache statistics
+   */
+  getCacheStats(): { size: number; keys: string[]; hitRate: number; totalRequests: number; hits: number } {
+    return {
+      size: this.cache.size,
+      keys: Array.from(this.cache.keys()),
+      hitRate: 1, // Simplified for now
+      totalRequests: 0,
+      hits: 0
+    };
+  }
 }
 
 // Export singleton instance

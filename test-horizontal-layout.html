@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,39 +11,49 @@
             margin: 20px;
             background: #f5f5f5;
         }
+
         .test-container {
             background: white;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .width-test {
             border: 2px dashed #ccc;
             padding: 10px;
             margin: 10px 0;
         }
+
         h3 {
             margin-top: 0;
             color: #333;
         }
     </style>
 </head>
+
 <body>
     <h1>Horizontal Range Input Layout Test</h1>
-    
+
     <div class="test-container">
         <h3>Desktop Width (800px)</h3>
         <div class="width-test" style="width: 800px;">
             <div style="display: flex; align-items: flex-start; gap: 1rem; flex-wrap: nowrap;">
                 <div style="display: flex; flex-direction: column; min-width: 100px; flex: 1;">
-                    <label style="font-size: 0.875rem; font-weight: 500; color: #6b7280; margin-bottom: 0.25rem;">Start GW</label>
-                    <input type="number" value="1" style="padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; width: 100%; box-sizing: border-box;">
+                    <label style="font-size: 0.875rem; font-weight: 500; color: #6b7280; margin-bottom: 0.25rem;">Start
+                        GW</label>
+                    <input type="number" value="1"
+                        style="padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; width: 100%; box-sizing: border-box;">
                 </div>
-                <div style="display: flex; align-items: center; font-size: 0.875rem; color: #6b7280; font-weight: 500; margin-top: 1.5rem; padding: 0 0.5rem;">to</div>
+                <div
+                    style="display: flex; align-items: center; font-size: 0.875rem; color: #6b7280; font-weight: 500; margin-top: 1.5rem; padding: 0 0.5rem;">
+                    to</div>
                 <div style="display: flex; flex-direction: column; min-width: 100px; flex: 1;">
-                    <label style="font-size: 0.875rem; font-weight: 500; color: #6b7280; margin-bottom: 0.25rem;">End GW</label>
-                    <input type="number" value="5" style="padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; width: 100%; box-sizing: border-box;">
+                    <label style="font-size: 0.875rem; font-weight: 500; color: #6b7280; margin-bottom: 0.25rem;">End
+                        GW</label>
+                    <input type="number" value="5"
+                        style="padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; width: 100%; box-sizing: border-box;">
                 </div>
             </div>
         </div>
@@ -53,13 +64,19 @@
         <div class="width-test" style="width: 640px;">
             <div style="display: flex; align-items: flex-start; gap: 0.5rem; flex-wrap: nowrap;">
                 <div style="display: flex; flex-direction: column; min-width: 80px; flex: 1;">
-                    <label style="font-size: 0.75rem; font-weight: 500; color: #6b7280; margin-bottom: 0.25rem;">Start GW</label>
-                    <input type="number" value="1" style="padding: 0.625rem 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; width: 100%; box-sizing: border-box;">
+                    <label style="font-size: 0.75rem; font-weight: 500; color: #6b7280; margin-bottom: 0.25rem;">Start
+                        GW</label>
+                    <input type="number" value="1"
+                        style="padding: 0.625rem 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; width: 100%; box-sizing: border-box;">
                 </div>
-                <div style="display: flex; align-items: center; font-size: 0.875rem; color: #6b7280; font-weight: 500; margin-top: 1.5rem; padding: 0 0.25rem;">to</div>
+                <div
+                    style="display: flex; align-items: center; font-size: 0.875rem; color: #6b7280; font-weight: 500; margin-top: 1.5rem; padding: 0 0.25rem;">
+                    to</div>
                 <div style="display: flex; flex-direction: column; min-width: 80px; flex: 1;">
-                    <label style="font-size: 0.75rem; font-weight: 500; color: #6b7280; margin-bottom: 0.25rem;">End GW</label>
-                    <input type="number" value="5" style="padding: 0.625rem 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; width: 100%; box-sizing: border-box;">
+                    <label style="font-size: 0.75rem; font-weight: 500; color: #6b7280; margin-bottom: 0.25rem;">End
+                        GW</label>
+                    <input type="number" value="5"
+                        style="padding: 0.625rem 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; width: 100%; box-sizing: border-box;">
                 </div>
             </div>
         </div>
@@ -70,13 +87,19 @@
         <div class="width-test" style="width: 480px;">
             <div style="display: flex; align-items: flex-start; gap: 0.375rem; flex-wrap: nowrap;">
                 <div style="display: flex; flex-direction: column; min-width: 70px; flex: 1;">
-                    <label style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-bottom: 0.25rem;">Start GW</label>
-                    <input type="number" value="1" style="padding: 0.75rem 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; min-height: 44px; width: 100%; box-sizing: border-box;">
+                    <label style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-bottom: 0.25rem;">Start
+                        GW</label>
+                    <input type="number" value="1"
+                        style="padding: 0.75rem 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; min-height: 44px; width: 100%; box-sizing: border-box;">
                 </div>
-                <div style="display: flex; align-items: center; font-size: 0.75rem; color: #6b7280; font-weight: 500; margin-top: 1.25rem; padding: 0 0.125rem;">to</div>
+                <div
+                    style="display: flex; align-items: center; font-size: 0.75rem; color: #6b7280; font-weight: 500; margin-top: 1.25rem; padding: 0 0.125rem;">
+                    to</div>
                 <div style="display: flex; flex-direction: column; min-width: 70px; flex: 1;">
-                    <label style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-bottom: 0.25rem;">End GW</label>
-                    <input type="number" value="5" style="padding: 0.75rem 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; min-height: 44px; width: 100%; box-sizing: border-box;">
+                    <label style="font-size: 0.75rem; font-weight: 600; color: #6b7280; margin-bottom: 0.25rem;">End
+                        GW</label>
+                    <input type="number" value="5"
+                        style="padding: 0.75rem 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 1rem; min-height: 44px; width: 100%; box-sizing: border-box;">
                 </div>
             </div>
         </div>
@@ -87,13 +110,20 @@
         <div class="width-test" style="width: 320px;">
             <div style="display: flex; align-items: flex-start; gap: 0.25rem; flex-wrap: nowrap;">
                 <div style="display: flex; flex-direction: column; min-width: 60px; flex: 1;">
-                    <label style="font-size: 0.6875rem; font-weight: 600; color: #6b7280; margin-bottom: 0.125rem;">Start GW</label>
-                    <input type="number" value="1" style="padding: 0.5rem 0.25rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; min-height: 40px; width: 100%; box-sizing: border-box;">
+                    <label
+                        style="font-size: 0.6875rem; font-weight: 600; color: #6b7280; margin-bottom: 0.125rem;">Start
+                        GW</label>
+                    <input type="number" value="1"
+                        style="padding: 0.5rem 0.25rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; min-height: 40px; width: 100%; box-sizing: border-box;">
                 </div>
-                <div style="display: flex; align-items: center; font-size: 0.6875rem; color: #6b7280; font-weight: 500; margin-top: 1rem; padding: 0;">to</div>
+                <div
+                    style="display: flex; align-items: center; font-size: 0.6875rem; color: #6b7280; font-weight: 500; margin-top: 1rem; padding: 0;">
+                    to</div>
                 <div style="display: flex; flex-direction: column; min-width: 60px; flex: 1;">
-                    <label style="font-size: 0.6875rem; font-weight: 600; color: #6b7280; margin-bottom: 0.125rem;">End GW</label>
-                    <input type="number" value="5" style="padding: 0.5rem 0.25rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; min-height: 40px; width: 100%; box-sizing: border-box;">
+                    <label style="font-size: 0.6875rem; font-weight: 600; color: #6b7280; margin-bottom: 0.125rem;">End
+                        GW</label>
+                    <input type="number" value="5"
+                        style="padding: 0.5rem 0.25rem; border: 1px solid #d1d5db; border-radius: 0.375rem; font-size: 0.875rem; min-height: 40px; width: 100%; box-sizing: border-box;">
                 </div>
             </div>
         </div>
@@ -101,7 +131,8 @@
 
     <div class="test-container">
         <h3>Instructions</h3>
-        <p>This test shows how the horizontal range input layout adapts to different screen sizes while maintaining its horizontal orientation:</p>
+        <p>This test shows how the horizontal range input layout adapts to different screen sizes while maintaining its
+            horizontal orientation:</p>
         <ul>
             <li><strong>Desktop (800px+):</strong> Full size with comfortable spacing</li>
             <li><strong>Tablet (640px):</strong> Reduced spacing and smaller fonts</li>
@@ -111,4 +142,5 @@
         <p>The layout never switches to vertical, ensuring consistency across all screen sizes.</p>
     </div>
 </body>
+
 </html>

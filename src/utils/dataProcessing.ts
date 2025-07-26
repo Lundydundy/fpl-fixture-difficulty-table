@@ -1,4 +1,5 @@
 import { Team, Fixture, ProcessedFixture, TeamFixture, SortOption } from '../types';
+import { getCustomDifficultyById } from './customDifficulty';
 
 /**
  * Transform raw fixture data from API to UI-friendly format
@@ -37,7 +38,7 @@ export function transformFixtureData(
       const homeFixture: ProcessedFixture = {
         opponent: awayTeam,
         isHome: true,
-        difficulty: fixture.team_h_difficulty,
+        difficulty: getCustomDifficultyById(teams, fixture.team_a, true, fixture.team_h_difficulty),
         gameweek: fixture.event,
         kickoffTime: fixture.kickoff_time
       };
@@ -47,7 +48,7 @@ export function transformFixtureData(
       const awayFixture: ProcessedFixture = {
         opponent: homeTeam,
         isHome: false,
-        difficulty: fixture.team_a_difficulty,
+        difficulty: getCustomDifficultyById(teams, fixture.team_h, false, fixture.team_a_difficulty),
         gameweek: fixture.event,
         kickoffTime: fixture.kickoff_time
       };
@@ -347,7 +348,7 @@ export function transformFixtureDataForRange(
       const homeFixture: ProcessedFixture = {
         opponent: awayTeam,
         isHome: true,
-        difficulty: fixture.team_h_difficulty,
+        difficulty: getCustomDifficultyById(teams, fixture.team_a, true, fixture.team_h_difficulty),
         gameweek: fixture.event,
         kickoffTime: fixture.kickoff_time
       };
@@ -357,7 +358,7 @@ export function transformFixtureDataForRange(
       const awayFixture: ProcessedFixture = {
         opponent: homeTeam,
         isHome: false,
-        difficulty: fixture.team_a_difficulty,
+        difficulty: getCustomDifficultyById(teams, fixture.team_h, false, fixture.team_a_difficulty),
         gameweek: fixture.event,
         kickoffTime: fixture.kickoff_time
       };

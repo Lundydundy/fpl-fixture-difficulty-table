@@ -22,7 +22,8 @@ import SkeletonLoader from './SkeletonLoader';
 import ErrorDisplay from './ErrorDisplay';
 
 import TeamSelector from './TeamSelector';
-
+import FixtureRunAnalyzer from './FixtureRunAnalyzer';
+import ServiceModeSelector from './ServiceModeSelector';
 
 import './FixtureDifficultyTable.css';
 
@@ -33,6 +34,7 @@ const FixtureDifficultyTable: React.FC<FixtureDifficultyTableProps> = ({
   const { state, dispatch } = useAppContext();
   const [errorInfo, setErrorInfo] = useState<ErrorInfo | null>(null);
   const [retryCount, setRetryCount] = useState(0);
+  const [activeTab, setActiveTab] = useState<'table' | 'analyzer'>('table');
 
   // Memoized selectors
   const isLoading = useMemo(() => selectors.isLoading(state), [state]);
@@ -310,6 +312,24 @@ const FixtureDifficultyTable: React.FC<FixtureDifficultyTableProps> = ({
           <DifficultyLegend />
         </div>
 
+        {/* Tab Navigation */}
+        <div className="fixture-difficulty-table__tabs">
+          <button 
+            className={`tab-button ${activeTab === 'table' ? 'active' : ''}`}
+            onClick={() => setActiveTab('table')}
+            type="button"
+          >
+            📊 Fixture Table
+          </button>
+          <button 
+            className={`tab-button ${activeTab === 'analyzer' ? 'active' : ''}`}
+            onClick={() => setActiveTab('analyzer')}
+            type="button"
+          >
+            🔍 Best Runs Analysis
+          </button>
+        </div>
+
         <div className="fixture-difficulty-table__content">
           {isLoading && hasData && (
             <div className="fixture-difficulty-table__updating">
@@ -332,24 +352,35 @@ const FixtureDifficultyTable: React.FC<FixtureDifficultyTableProps> = ({
 
           {isDataReady && !shouldShowNoResults && (
             <>
-              <div className="fixture-difficulty-table__stats">
-                <span>
-                  Showing {searchResultsCount} team{searchResultsCount === 1 ? '' : 's'}
-                  {state.selectedTeamIds.length > 0 && state.selectedTeamIds.length < state.teams.length && 
-                    ` (${state.selectedTeamIds.length} selected)`}
-                  {state.searchTerm && ` matching "${state.searchTerm}"`}
-                </span>
-                <span>
-                  Analyzing gameweeks {state.gameweekRange.start}-{state.gameweekRange.end}
-                </span>
-              </div>
+              {activeTab === 'table' && (
+                <>
+                  <div className="fixture-difficulty-table__stats">
+                    <span>
+                      Showing {searchResultsCount} team{searchResultsCount === 1 ? '' : 's'}
+                      {state.selectedTeamIds.length > 0 && state.selectedTeamIds.length < state.teams.length && 
+                        ` (${state.selectedTeamIds.length} selected)`}
+                      {state.searchTerm && ` matching "${state.searchTerm}"`}
+                    </span>
+                    <span>
+                      Analyzing gameweeks {state.gameweekRange.start}-{state.gameweekRange.end}
+                    </span>
+                  </div>
 
-              <FixtureTable
-                teams={sortedTeams}
-                gameweekRange={state.gameweekRange}
-                sortBy={state.sortBy}
-                onSortChange={handleSortChange}
-              />
+                  <FixtureTable
+                    teams={sortedTeams}
+                    gameweekRange={state.gameweekRange}
+                    sortBy={state.sortBy}
+                    onSortChange={handleSortChange}
+                  />
+                </>
+              )}
+
+              {activeTab === 'analyzer' && (
+                <FixtureRunAnalyzer
+                  teams={state.teams}
+                  fixtures={state.fixtures}
+                />
+              )}
             </>
           )}
         </div>

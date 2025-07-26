@@ -285,7 +285,7 @@ class FPLApiService {
 // Export singleton instance - lazy initialization to avoid issues with mocking
 let _fplApiService: FPLApiService | null = null;
 
-export const fplApiService = {
+export const originalFplApiService = {
   get instance(): FPLApiService {
     if (!_fplApiService) {
       _fplApiService = new FPLApiService();
@@ -298,5 +298,9 @@ export const fplApiService = {
     _fplApiService = null;
   }
 };
+
+// Import and re-export the service switcher as the main service
+import { fplApiService } from './FPLApiServiceSwitcher';
+export { fplApiService };
 
 export default FPLApiService;

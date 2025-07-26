@@ -10,7 +10,7 @@
   margin-bottom: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
-  color: #374151;
+  color: #96a9c7;
 }
 
 .gameweek-range-input__container {
@@ -23,7 +23,8 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  flex-wrap: nowrap; /* Prevent wrapping to maintain horizontal layout */
+  flex-wrap: nowrap;
+  /* Prevent wrapping to maintain horizontal layout */
 }
 
 .gameweek-range-input__field {
@@ -112,23 +113,25 @@
   .gameweek-range-input {
     margin: 0.75rem 0;
   }
-  
+
   .gameweek-range-input__input {
-    min-height: 44px; /* Touch-friendly height */
-    font-size: 1rem; /* Prevent zoom on iOS */
+    min-height: 44px;
+    /* Touch-friendly height */
+    font-size: 1rem;
+    /* Prevent zoom on iOS */
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
     border-width: 2px;
   }
-  
+
   .gameweek-range-input__inputs {
     gap: 1.25rem;
   }
-  
+
   .gameweek-range-input__field {
     min-width: 120px;
   }
-  
+
   .gameweek-range-input__summary {
     padding: 1.25rem;
     border-radius: 0.75rem;
@@ -142,24 +145,24 @@
     gap: 0.5rem;
     align-items: flex-start;
   }
-  
+
   .gameweek-range-input__separator {
     margin-top: 1.5rem;
     justify-content: center;
     flex-shrink: 0;
     padding: 0 0.25rem;
   }
-  
+
   .gameweek-range-input__field {
     min-width: 80px;
     flex: 1;
   }
-  
+
   .gameweek-range-input__input {
     font-size: 0.875rem;
     padding: 0.625rem 0.5rem;
   }
-  
+
   .gameweek-range-input__field-label {
     font-size: 0.75rem;
   }
@@ -172,33 +175,34 @@
     flex-direction: row;
     gap: 0.375rem;
   }
-  
+
   .gameweek-range-input__input {
     min-height: 44px;
-    font-size: 1rem; /* Prevent zoom on iOS */
+    font-size: 1rem;
+    /* Prevent zoom on iOS */
     padding: 0.75rem 0.5rem;
   }
-  
+
   .gameweek-range-input__field {
     min-width: 70px;
     flex: 1;
   }
-  
+
   .gameweek-range-input__field-label {
     font-size: 0.75rem;
     font-weight: 600;
   }
-  
+
   .gameweek-range-input__separator {
     font-size: 0.75rem;
     padding: 0 0.125rem;
     margin-top: 1.25rem;
   }
-  
+
   .gameweek-range-input__summary {
     padding: 1rem;
   }
-  
+
   .gameweek-range-input__range-label {
     font-size: 1rem;
   }
@@ -213,12 +217,12 @@
     border-radius: 0.5rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
-  
+
   .gameweek-range-input__input:focus {
     border-width: 3px;
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
   }
-  
+
   .gameweek-range-input__input--error:focus {
     box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
   }
@@ -230,16 +234,16 @@
     flex-direction: row;
     gap: 1rem;
   }
-  
+
   .gameweek-range-input__separator {
     margin-top: 1.5rem;
     order: initial;
   }
-  
+
   .gameweek-range-input__field {
     order: initial;
   }
-  
+
   .gameweek-range-input__input {
     min-height: 40px;
     padding: 0.625rem 0.875rem;
@@ -285,22 +289,22 @@
   .gameweek-range-input__inputs {
     gap: 0.25rem;
   }
-  
+
   .gameweek-range-input__field {
     min-width: 60px;
   }
-  
+
   .gameweek-range-input__input {
     padding: 0.5rem 0.25rem;
     font-size: 0.875rem;
     min-height: 40px;
   }
-  
+
   .gameweek-range-input__field-label {
     font-size: 0.6875rem;
     margin-bottom: 0.125rem;
   }
-  
+
   .gameweek-range-input__separator {
     font-size: 0.6875rem;
     padding: 0;
