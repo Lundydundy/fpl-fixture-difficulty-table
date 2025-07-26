@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { realFplApiService } from '../services/RealFPLApiService';
+import { fplApiService } from '../services/FPLApiService';
 import { ProxyService } from '../services/ProxyService';
 import './ApiStatus.css';
 
@@ -21,12 +21,24 @@ const ApiStatus: React.FC = () => {
   const checkApiStatus = async () => {
     setLoading(true);
     try {
-      const apiStatus = await realFplApiService.getApiStatus();
-      setStatus(apiStatus);
+      // For offline mode, get the actual data counts
+      const [teams, fixtures, gameweeks] = await Promise.all([
+        fplApiService.getTeams(),
+        fplApiService.getFixtures(),
+        fplApiService.getGameweeks()
+      ]);
+      
+      setStatus({
+        connected: true,
+        proxy: 'Offline Mode',
+        teamsCount: teams.length,
+        gameweeksCount: gameweeks.length,
+        fixturesCount: fixtures.length
+      });
     } catch (error) {
       setStatus({
         connected: false,
-        proxy: ProxyService.getProxyStatus().current,
+        proxy: 'Offline Mode',
         teamsCount: 0,
         gameweeksCount: 0,
         fixturesCount: 0,
@@ -49,7 +61,7 @@ const ApiStatus: React.FC = () => {
   };
 
   const clearCache = () => {
-    realFplApiService.clearCache();
+    fplApiService.clearCache();
     checkApiStatus();
   };
 

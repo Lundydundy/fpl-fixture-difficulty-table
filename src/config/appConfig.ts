@@ -15,13 +15,13 @@ export const APP_CONFIG = {
         
         // Available modes for users to switch between
         // Set to ['offline'] to make the app purely offline
-        availableModes: ['offline', 'online', 'mock'] as const,
+        availableModes: ['offline'] as const,
         
         // Whether to show the service mode selector component
-        showModeSelector: true,
+        showModeSelector: false,
         
         // Whether to allow mode switching (if false, app will always use defaultMode)
-        allowModeSwitching: true
+        allowModeSwitching: false
     },
 
     /**

@@ -68,7 +68,7 @@ class FPLApiServiceSwitcher implements IFPLApiService {
             return;
         }
         
-        if (!APP_CONFIG.dataSource.availableModes.includes(mode)) {
+        if (!APP_CONFIG.dataSource.availableModes.includes(mode as any)) {
             console.warn(`Mode '${mode}' is not available in current configuration`);
             return;
         }

@@ -2,7 +2,7 @@ import React, { useEffect, useCallback, useMemo, useState } from 'react';
 import { FixtureDifficultyTableProps, GameweekRange } from '../types';
 import { useAppContext } from '../context/AppContext';
 import { selectors } from '../context/selectors';
-import { realFplApiService } from '../services/RealFPLApiService';
+import { fplApiService } from '../services/FPLApiService';
 import { errorHandlingService, ErrorInfo } from '../services/ErrorHandlingService';
 import { accessibilityService } from '../services/AccessibilityService';
 import { 
@@ -65,8 +65,9 @@ const FixtureDifficultyTable: React.FC<FixtureDifficultyTableProps> = ({
     setErrorInfo(null);
 
     try {
-      // Use real FPL API service
-      const apiService = realFplApiService;
+      // Use configured FPL API service (defaults to offline)
+      const apiService = fplApiService;
+      console.log('🔧 Using FPL API service mode:', fplApiService.getCurrentMode());
       
       // Use error handling service with retry logic
       const [teams, fixtures, gameweeks] = await errorHandlingService.withRetry(
