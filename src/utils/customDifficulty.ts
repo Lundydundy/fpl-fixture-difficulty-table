@@ -6,7 +6,6 @@ import { Team } from '../types';
  * Custom Rules:
  * - Man City away fixtures: Grade 5 (hardest)
  * - Arsenal away fixtures: Grade 5 (hardest)
- * - Sunderland home/away fixtures: Grade 1 (easiest)
  */
 export function getCustomDifficulty(
   opponentTeam: Team | string, 
@@ -19,12 +18,6 @@ export function getCustomDifficulty(
   if (!isHome && (opponentName === 'Manchester City' || opponentName === 'Arsenal')) {
     return 5;
   }
-  
-  // Sunderland home and away fixtures are grade 1 (easiest)
-  if (opponentName === 'Sunderland') {
-    return 1;
-  }
-  
   return originalDifficulty;
 }
 
@@ -53,7 +46,5 @@ export const CUSTOM_DIFFICULTY_TEAMS = {
     { name: 'Manchester City', condition: 'away', difficulty: 5 },
     { name: 'Arsenal', condition: 'away', difficulty: 5 }
   ],
-  easiest: [
-    { name: 'Sunderland', condition: 'home/away', difficulty: 1 }
-  ]
+  easiest: []
 } as const;

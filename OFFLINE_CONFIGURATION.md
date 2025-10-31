@@ -111,7 +111,7 @@ customDifficulty: {
     enabled: true,
     rules: {
         hardestAway: ['Man City', 'Arsenal'],  // Away = Grade 5
-        easiestAll: ['Sunderland']             // Home/Away = Grade 1
+        easiestAll: []                         // No always-easy teams
     }
 }
 ```

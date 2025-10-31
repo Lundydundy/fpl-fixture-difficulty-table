@@ -37,7 +37,7 @@ export const APP_CONFIG = {
             hardestAway: ['Man City', 'Arsenal'],
             
             // Teams where all fixtures (home/away) are grade 1 (easiest)
-            easiestAll: ['Sunderland']
+            easiestAll: [] as const
         }
     },
 
