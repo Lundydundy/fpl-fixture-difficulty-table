@@ -110,7 +110,6 @@ const ServiceModeSelector: React.FC<ServiceModeSelectorProps> = ({
                             <ul>
                                 <li>Man City away = Grade 5 (hardest)</li>
                                 <li>Arsenal away = Grade 5 (hardest)</li>
-                                <li>Sunderland home/away = Grade 1 (easiest)</li>
                             </ul>
                         </div>
                     )}

@@ -118,7 +118,7 @@ const FixtureRunAnalyzer: React.FC<FixtureRunAnalyzerProps> = ({ teams, fixtures
         <p>Find teams with consistently easy fixtures across multiple gameweeks</p>
         <div className="custom-difficulty-info">
           <small>
-            📝 Custom ratings: Man City & Arsenal away = 5 (hardest), Sunderland home/away = 1 (easiest)
+            📝 Custom ratings: Arsenal away = 5 (hardest)
           </small>
         </div>
       </div>
