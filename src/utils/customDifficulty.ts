@@ -14,13 +14,12 @@ export function getCustomDifficulty(
   originalDifficulty: number
 ): number {
   const opponentName = typeof opponentTeam === 'string' ? opponentTeam : opponentTeam.name;
-  
-  // Man City and Arsenal away fixtures are grade 5 (hardest)
-  if (!isHome && (opponentName === 'Manchester City' || opponentName === 'Arsenal')) {
+
+  // Arsenal away fixtures are grade 5 (hardest)
+  if (!isHome && (opponentName === 'Arsenal')) {
     return 5;
   }
   
-  // Sunderland home and away fixtures are grade 1 (easiest)
 
   return originalDifficulty;
 }
