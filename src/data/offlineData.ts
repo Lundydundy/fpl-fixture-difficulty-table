@@ -1,12 +1,11 @@
 import { Team, Fixture, Gameweek } from '../types';
 
 /**
- * Offline FPL Data - auto-generated on 2025-10-31T00:12:43.216Z
+ * Offline FPL Data - auto-generated on 2025-10-31T00:29:42.196Z
  *
  * Data sourced from the official FPL API with custom difficulty rules applied:
  * - Man City home fixtures set away difficulty to 5
  * - Arsenal home fixtures set away difficulty to 5
- * - Sunderland fixtures set opponent difficulty to 1
  */
 
 export const OFFLINE_TEAMS: Team[] = [
@@ -320,7 +319,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-08-16T14:00:00Z",
         "team_a": 19,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 2,
         "team_a_score": 0,
         "team_h_score": 3
@@ -464,7 +463,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 3,
         "team_a_difficulty": 2,
-        "team_h_difficulty": 1,
+        "team_h_difficulty": 2,
         "team_a_score": 0,
         "team_h_score": 2
     },
@@ -567,7 +566,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-08-30T14:00:00Z",
         "team_a": 5,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3,
         "team_a_score": 1,
         "team_h_score": 2
@@ -698,7 +697,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 8,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1,
+        "team_h_difficulty": 2,
         "team_a_score": 0,
         "team_h_score": 0
     },
@@ -905,7 +904,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-09-21T13:00:00Z",
         "team_a": 2,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3,
         "team_a_score": 1,
         "team_h_score": 1
@@ -997,7 +996,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 16,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1,
+        "team_h_difficulty": 2,
         "team_a_score": 1,
         "team_h_score": 0
     },
@@ -1101,7 +1100,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 14,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1,
+        "team_h_difficulty": 2,
         "team_a_score": 0,
         "team_h_score": 2
     },
@@ -1256,7 +1255,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-10-18T14:00:00Z",
         "team_a": 20,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 2,
         "team_a_score": 0,
         "team_h_score": 2
@@ -1335,7 +1334,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 7,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1,
+        "team_h_difficulty": 2,
         "team_a_score": 2,
         "team_h_score": 1
     },
@@ -1550,7 +1549,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-11-03T20:00:00Z",
         "team_a": 9,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 2
     },
     {
@@ -1594,7 +1593,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-11-08T17:30:00Z",
         "team_a": 1,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 4
     },
     {
@@ -1705,7 +1704,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 10,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 117,
@@ -1803,7 +1802,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-11-29T15:00:00Z",
         "team_a": 4,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3
     },
     {
@@ -1980,7 +1979,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 12,
         "team_a_difficulty": 4,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 138,
@@ -2035,7 +2034,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 13,
         "team_a_difficulty": 5,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 148,
@@ -2177,7 +2176,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-12-14T14:00:00Z",
         "team_a": 15,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3
     },
     {
@@ -2244,7 +2243,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 6,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 167,
@@ -2419,7 +2418,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-12-27T15:00:00Z",
         "team_a": 11,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 2
     },
     {
@@ -2529,7 +2528,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2025-12-30T20:00:00Z",
         "team_a": 13,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 4
     },
     {
@@ -2640,7 +2639,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 18,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 200,
@@ -2684,7 +2683,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 5,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 204,
@@ -2848,7 +2847,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-01-17T15:00:00Z",
         "team_a": 8,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3
     },
     {
@@ -2981,7 +2980,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 19,
         "team_a_difficulty": 2,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 231,
@@ -3068,7 +3067,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-01-31T15:00:00Z",
         "team_a": 3,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 2
     },
     {
@@ -3102,7 +3101,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 1,
         "team_a_difficulty": 5,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 242,
@@ -3288,7 +3287,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-02-11T20:00:00Z",
         "team_a": 12,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 4
     },
     {
@@ -3398,7 +3397,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-02-21T15:00:00Z",
         "team_a": 10,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 2
     },
     {
@@ -3443,7 +3442,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 4,
         "team_a_difficulty": 4,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 273,
@@ -3597,7 +3596,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 11,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 287,
@@ -3739,7 +3738,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-03-14T15:00:00Z",
         "team_a": 6,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3
     },
     {
@@ -3839,7 +3838,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 15,
         "team_a_difficulty": 4,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 309,
@@ -3959,7 +3958,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-04-11T14:00:00Z",
         "team_a": 18,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3
     },
     {
@@ -3982,7 +3981,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 2,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 322,
@@ -4168,7 +4167,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-04-25T14:00:00Z",
         "team_a": 16,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 2
     },
     {
@@ -4301,7 +4300,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 20,
         "team_a_difficulty": 2,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 351,
@@ -4388,7 +4387,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-05-09T14:00:00Z",
         "team_a": 14,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3
     },
     {
@@ -4477,7 +4476,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "team_a": 17,
         "team_h": 9,
         "team_a_difficulty": 3,
-        "team_h_difficulty": 1
+        "team_h_difficulty": 2
     },
     {
         "id": 367,
@@ -4608,7 +4607,7 @@ export const OFFLINE_FIXTURES: Fixture[] = [
         "kickoff_time": "2026-05-24T15:00:00Z",
         "team_a": 7,
         "team_h": 17,
-        "team_a_difficulty": 1,
+        "team_a_difficulty": 3,
         "team_h_difficulty": 3
     },
     {
@@ -4989,12 +4988,6 @@ export const CUSTOM_DIFFICULTY_RULES = {
             condition: 'Home fixtures only',
             difficulty: 5,
             reason: 'Playing away to Arsenal is always the hardest'
-        },
-        {
-            team: 'Sunderland',
-            condition: 'Home and away fixtures',
-            difficulty: 1,
-            reason: 'Opponents facing Sunderland get the easiest rating'
         }
     ],
     note: 'These custom ratings override the standard FPL difficulty ratings for strategic analysis'

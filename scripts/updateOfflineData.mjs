@@ -9,7 +9,6 @@ const OUTPUT_PATH = path.resolve(__dirname, '../src/data/offlineData.ts');
 const API_BASE = 'https://fantasy.premierleague.com/api';
 
 const HARDEST_HOME_FIXTURES = new Set(['Man City', 'Arsenal']);
-const EASIEST_FIXTURES = new Set(['Sunderland']);
 
 async function fetchJson(endpoint) {
   const response = await fetch(`${API_BASE}/${endpoint}`);
@@ -48,18 +47,9 @@ function mapGameweek(rawEvent) {
 
 function applyCustomDifficulty(fixture, teamsById) {
   const homeTeam = teamsById.get(fixture.team_h);
-  const awayTeam = teamsById.get(fixture.team_a);
 
   if (homeTeam && HARDEST_HOME_FIXTURES.has(homeTeam.name)) {
     fixture.team_a_difficulty = 5;
-  }
-
-  if (homeTeam && EASIEST_FIXTURES.has(homeTeam.name)) {
-    fixture.team_a_difficulty = 1;
-  }
-
-  if (awayTeam && EASIEST_FIXTURES.has(awayTeam.name)) {
-    fixture.team_h_difficulty = 1;
   }
 }
 
@@ -94,13 +84,13 @@ function formatExport(name, type, data) {
 }
 
 function buildFileContent(teams, fixtures, gameweeks) {
-  const header = `import { Team, Fixture, Gameweek } from '../types';\n\n/**\n * Offline FPL Data - auto-generated on ${new Date().toISOString()}\n *\n * Data sourced from the official FPL API with custom difficulty rules applied:\n * - Man City home fixtures set away difficulty to 5\n * - Arsenal home fixtures set away difficulty to 5\n * - Sunderland fixtures set opponent difficulty to 1\n */\n\n`;
+  const header = `import { Team, Fixture, Gameweek } from '../types';\n\n/**\n * Offline FPL Data - auto-generated on ${new Date().toISOString()}\n *\n * Data sourced from the official FPL API with custom difficulty rules applied:\n * - Man City home fixtures set away difficulty to 5\n * - Arsenal home fixtures set away difficulty to 5\n */\n\n`;
 
   const teamsExport = `${formatExport('OFFLINE_TEAMS', 'Team[]', teams)}\n\n`;
   const fixturesExport = `${formatExport('OFFLINE_FIXTURES', 'Fixture[]', fixtures)}\n\n`;
   const gameweeksExport = `${formatExport('OFFLINE_GAMEWEEKS', 'Gameweek[]', gameweeks)}\n\n`;
 
-  const serviceClass = `export class OfflineFPLApiService {\n    async getTeams(): Promise<Team[]> {\n        await new Promise(resolve => setTimeout(resolve, 100));\n        return [...OFFLINE_TEAMS];\n    }\n\n    async getFixtures(): Promise<Fixture[]> {\n        await new Promise(resolve => setTimeout(resolve, 150));\n        return [...OFFLINE_FIXTURES];\n    }\n\n    async getGameweeks(): Promise<Gameweek[]> {\n        await new Promise(resolve => setTimeout(resolve, 100));\n        return [...OFFLINE_GAMEWEEKS];\n    }\n\n    clearCache(): void {\n        // No cache to clear in offline mode\n    }\n\n    getCacheStats(): { size: number; keys: string[]; hitRate: number; totalRequests: number; hits: number } {\n        return {\n            size: OFFLINE_TEAMS.length + OFFLINE_FIXTURES.length + OFFLINE_GAMEWEEKS.length,\n            keys: ['teams', 'fixtures', 'gameweeks'],\n            hitRate: 1,\n            totalRequests: 0,\n            hits: 0\n        };\n    }\n}\n\nexport const offlineFplApiService = new OfflineFPLApiService();\n\nexport const CUSTOM_DIFFICULTY_RULES = {\n    description: 'Custom difficulty ratings applied to specific teams',\n    rules: [\n        {\n            team: 'Man City',\n            condition: 'Home fixtures only',\n            difficulty: 5,\n            reason: 'Playing away to Man City is always the hardest'\n        },\n        {\n            team: 'Arsenal',\n            condition: 'Home fixtures only',\n            difficulty: 5,\n            reason: 'Playing away to Arsenal is always the hardest'\n        },\n        {\n            team: 'Sunderland',\n            condition: 'Home and away fixtures',\n            difficulty: 1,\n            reason: 'Opponents facing Sunderland get the easiest rating'\n        }\n    ],\n    note: 'These custom ratings override the standard FPL difficulty ratings for strategic analysis'\n} as const;\n`;
+  const serviceClass = `export class OfflineFPLApiService {\n    async getTeams(): Promise<Team[]> {\n        await new Promise(resolve => setTimeout(resolve, 100));\n        return [...OFFLINE_TEAMS];\n    }\n\n    async getFixtures(): Promise<Fixture[]> {\n        await new Promise(resolve => setTimeout(resolve, 150));\n        return [...OFFLINE_FIXTURES];\n    }\n\n    async getGameweeks(): Promise<Gameweek[]> {\n        await new Promise(resolve => setTimeout(resolve, 100));\n        return [...OFFLINE_GAMEWEEKS];\n    }\n\n    clearCache(): void {\n        // No cache to clear in offline mode\n    }\n\n    getCacheStats(): { size: number; keys: string[]; hitRate: number; totalRequests: number; hits: number } {\n        return {\n            size: OFFLINE_TEAMS.length + OFFLINE_FIXTURES.length + OFFLINE_GAMEWEEKS.length,\n            keys: ['teams', 'fixtures', 'gameweeks'],\n            hitRate: 1,\n            totalRequests: 0,\n            hits: 0\n        };\n    }\n}\n\nexport const offlineFplApiService = new OfflineFPLApiService();\n\nexport const CUSTOM_DIFFICULTY_RULES = {\n    description: 'Custom difficulty ratings applied to specific teams',\n    rules: [\n        {\n            team: 'Man City',\n            condition: 'Home fixtures only',\n            difficulty: 5,\n            reason: 'Playing away to Man City is always the hardest'\n        },\n        {\n            team: 'Arsenal',\n            condition: 'Home fixtures only',\n            difficulty: 5,\n            reason: 'Playing away to Arsenal is always the hardest'\n        }\n    ],\n    note: 'These custom ratings override the standard FPL difficulty ratings for strategic analysis'\n} as const;\n`;
 
   return `${header}${teamsExport}${fixturesExport}${gameweeksExport}${serviceClass}`;
 }
