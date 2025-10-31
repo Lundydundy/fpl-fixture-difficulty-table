@@ -17,7 +17,7 @@ export function transformFixtureData(
   // Filter fixtures to the specified gameweek range
   // maxGameweeks parameter is actually the end gameweek, not a count
   const filteredFixtures = fixtures.filter(fixture => 
-    fixture.event <= maxGameweeks && !fixture.finished
+    fixture.event <= maxGameweeks
   );
 
   // Group fixtures by team

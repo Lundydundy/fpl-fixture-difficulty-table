@@ -35,9 +35,10 @@ class OfflineFPLApiService {
 
     /**
      * Fetch all fixtures with offline data
-    * Custom difficulty ratings are already applied:
-    * - Man City away fixtures: Grade 5 (hardest)
-    * - Arsenal away fixtures: Grade 5 (hardest)
+     * Custom difficulty ratings are already applied:
+     * - Man City away fixtures: Grade 5 (hardest)
+     * - Arsenal away fixtures: Grade 5 (hardest)
+     * - Sunderland home/away fixtures: Grade 1 (easiest)
      */
     async getFixtures(): Promise<Fixture[]> {
         await this.delay(150);
