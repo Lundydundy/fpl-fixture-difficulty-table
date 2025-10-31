@@ -21,10 +21,7 @@ export function getCustomDifficulty(
   }
   
   // Sunderland home and away fixtures are grade 1 (easiest)
-  if (opponentName === 'Sunderland') {
-    return 1;
-  }
-  
+
   return originalDifficulty;
 }
 
