@@ -17,7 +17,6 @@ export const OFFLINE_ONLY_CONFIG = {
         enabled: true,
         rules: {
             hardestAway: ['Man City', 'Arsenal'],
-            easiestAll: ['Sunderland']
         }
     },
 
